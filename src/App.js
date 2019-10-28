@@ -4,25 +4,16 @@ import './App.css';
 import DisplayEmployee from './components/DisplayEmployee';
 
 const sampleEmployee = {
-  gender: 'male',
-  name: {
-    first: 'Charlie',
-    last: 'Thompson',
-  },
-  location: {
-    street: {
-      number: 761,
-      name: 'Tay Street',
-    },
-    city: 'Timaru',
-    postcode: 76111,
-  },
-  email: 'charlie.thompson@example.com',
-  picture: {
-    medium: 'https://randomuser.me/api/portraits/med/men/40.jpg',
-  },
-};
-
+  const quotes = [
+    {
+        quote:
+            "Facts are meaningless. You could use facts to prove anything that's even remotely true.",
+        character: "Homer Simpson",
+        image:
+            "https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FHomerSimpson.png?1497567511939",
+        element: 1
+    }
+  
 class App extends React.Component {
 
   constructor(props) {
@@ -35,9 +26,9 @@ class App extends React.Component {
 
   getEmployee() {
     // Send the request
-    axios.get('https://randomuser.me/api?nat=fr')
+    axios.get('https://quests.wilders.dev/simpsons-quotes/quotes')
       // Extract the DATA from the received response
-      .then(response => response.data)
+      .then(response => response.json())
       // Use this data to update the state
       .then(data => {
         console.log(data)

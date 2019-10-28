@@ -6,8 +6,8 @@ function DisplayEmployee({ employee }) {
     return (
         <div className="DisplayEmployee">
             <img
-                src={employee.picture.medium}
-                alt={employee.name.first}
+                src={employee.image.medium}
+                alt={employee.character}
             />
             <ul>
                 <li>Gender: {employee.gender}</li>
